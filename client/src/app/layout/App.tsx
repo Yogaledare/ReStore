@@ -2,6 +2,7 @@
 import {Container, createTheme, CssBaseline, ThemeProvider} from "@mui/material";
 import {Header} from "./Header.tsx";
 import {ChangeEvent, useState} from "react";
+import {Outlet} from "react-router-dom";
 
 function App() {
     
@@ -32,7 +33,7 @@ function App() {
                 handleSwitchChange={handleDarkModeChange}
             ></Header>
             <Container>
-                <Catalog/>
+                <Outlet />
             </Container>
         </ThemeProvider>
     )
