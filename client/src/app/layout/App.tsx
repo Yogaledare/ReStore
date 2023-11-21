@@ -3,6 +3,8 @@ import {Container, createTheme, CssBaseline, ThemeProvider} from "@mui/material"
 import {Header} from "./Header.tsx";
 import {ChangeEvent, useState} from "react";
 import {Outlet} from "react-router-dom";
+import {ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
     
@@ -27,14 +29,15 @@ function App() {
 
     return (
         <ThemeProvider theme={theme}>
-            <CssBaseline></CssBaseline>
-            <Header
-                darkMode={darkMode}
-                handleSwitchChange={handleDarkModeChange}
-            ></Header>
-            <Container>
-                <Outlet />
-            </Container>
+            <ToastContainer position={'bottom-right'} hideProgressBar theme={'colored'} />
+                <CssBaseline></CssBaseline>
+                <Header
+                    darkMode={darkMode}
+                    handleSwitchChange={handleDarkModeChange}
+                ></Header>
+                <Container>
+                    <Outlet/>
+                </Container>
         </ThemeProvider>
     )
 }
